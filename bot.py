@@ -2,13 +2,13 @@ import logging
 from telegram import Update, ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-from hackerAI import HackerAI
+from hack import HackAI
 
 class TelegramBot:
     def __init__(self, token):
         self.updater = Updater(token)
         self.dispatcher = self.updater.dispatcher
-        self.hacker_ai = HackerAI()
+        self.hacker_ai = HackAI()
 
     def start(self, update: Update, context: CallbackContext) -> None:
         update.message.reply_text(
