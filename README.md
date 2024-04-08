@@ -23,7 +23,7 @@ This application consists of a Streamlit web interface and a Telegram bot. The S
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/streamlit-telegram-bot.git
+   git clone https://github.com/yourusername/HackerAI.git
    ```
 
 2. Install the required dependencies:
