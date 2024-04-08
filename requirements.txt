@@ -1,0 +1,8 @@
+streamlit
+python-telegram-bot == 13.3
+requests
+psutil
+bs4
+urllib3==1.26.6
+googlesearch-python
+cachetools
