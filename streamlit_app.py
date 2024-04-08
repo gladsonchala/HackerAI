@@ -22,7 +22,7 @@ class StreamlitApp:
         # Generate text button
         if st.button("Generate Text"):
             with st.spinner("Generating..."):
-                response_text = self.hacker_ai.generate_text(self.hacker_ai.ChatMLFormatter(prompt))
+                response_text = self.hacker_ai.generate_text(prompt)
                 if response_text is not None:
                     log_message = f"Response displayed successfully: {response_text}"
                     logging.info(log_message)
@@ -44,7 +44,7 @@ class TelegramBot:
 
     def generate_text(self, update, context):
         prompt = update.message.text
-        response_text = self.hacker_ai.generate_text(self.hacker_ai.ChatMLFormatter(prompt))
+        response_text = self.hacker_ai.generate_text(prompt)
         if response_text is not None:
             try:
                 update.message.reply_text(response_text, parse_mode="Markdown")

@@ -17,7 +17,7 @@ class StreamlitApp:
         # Generate text button
         if st.button("Generate Text"):
             with st.spinner("Generating..."):
-                response_text = self.hacker_ai.generate_text(self.hacker_ai.ChatMLFormatter(prompt))
+                response_text = self.hacker_ai.generate_text(prompt)
                 if response_text is not None:
                     log_message = f"Response displayed successfully: {response_text}"
                     logging.info(log_message)

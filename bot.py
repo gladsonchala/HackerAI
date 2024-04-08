@@ -17,7 +17,7 @@ class TelegramBot:
 
     def generate_text(self, update: Update, context: CallbackContext) -> None:
         prompt = update.message.text
-        response_text = self.hacker_ai.generate_text(self.hacker_ai.ChatMLFormatter(prompt))
+        response_text = self.hacker_ai.generate_text(prompt)
         if response_text is not None:
             update.message.reply_text(response_text, parse_mode=ParseMode.MARKDOWN)
         else:
