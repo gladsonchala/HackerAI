@@ -18,7 +18,7 @@ class HackAI:
         response = requests.post(f"{API_BASE_URL}{model}", headers=headers, json=input_data)
         if response.status_code == 200:
             log_message = f"Text generated successfully: {response.status_code}"
-            response_text = response.json()
+            response_text = response.text
             parsed_response = json.loads(response_text)
             response_message = parsed_response['result']['response']
             return response_message
