@@ -1,3 +1,4 @@
+import json
 import requests
 import logging
 from strings import instruction, API_BASE_URL, headers, model
@@ -17,7 +18,10 @@ class HackAI:
         response = requests.post(f"{API_BASE_URL}{model}", headers=headers, json=input_data)
         if response.status_code == 200:
             log_message = f"Text generated successfully: {response.status_code}"
-            return response.json()
+            response_text = response.json()
+            parsed_response = json.loads(response_text)
+            response_message = parsed_response['result']['response']
+            return response_message
         else:
             log_message = f"Failed to generate text. Status code: {response.status_code}: {response.text}"
             logging.error(log_message)
