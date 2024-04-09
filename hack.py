@@ -1,12 +1,12 @@
 import requests
 import logging
-from strings import instruction, API_BASE_URL, headers, model
+from strings import instruction, API_BASE_URL, headers
 
 class HackAI:
     def __init__(self):
         self.API_BASE_URL = API_BASE_URL
         self.headers = headers
-        self.model = model
+        # self.model = model
         
         logging.basicConfig(level=logging.INFO)
 
@@ -39,8 +39,9 @@ class HackAI:
             {"role": "assistant", "content": "Your response is always in JSON format. use keys like: message, mood, etc"},
             {"role": "user", "content": prompt}
         ]
+        from strings import model
         try:
             output = self.run_ai(model, inputs)
             return output
         except Exception as e:
-            return {"error": str(e)}
+            return {"error": str(e) + model + inputs}
