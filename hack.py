@@ -1,7 +1,7 @@
 import json
 import requests
 import logging
-from strings import instruction, instruction2, API_BASE_URL, headers, model
+from strings import instruction, API_BASE_URL, headers, model
 
 class HackAI:
     def __init__(self):
@@ -40,7 +40,7 @@ class HackAI:
         """
         inputs = [
             {"role": "system", "content": instruction},
-            {"role": "assistant", "content": instruction2},
+            # {"role": "assistant", "content": instruction2},
             {"role": "user", "content": prompt}
         ]
         try:
