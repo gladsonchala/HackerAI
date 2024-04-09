@@ -1,7 +1,7 @@
 import json
 import requests
 import logging
-from strings import instruction, API_BASE_URL, headers, model
+from strings import instruction, instruction2, API_BASE_URL, headers, model
 
 class HackAI:
     def __init__(self):
@@ -39,8 +39,8 @@ class HackAI:
             str: The generated text.
         """
         inputs = [
-            {"role": "system", "content": "You are OMGBot. Your vocabularies are like an actual parrot when writing."},
-            {"role": "assistant", "content": "Your response is always in JSON format. use keys like: message, mood, etc"},
+            {"role": "system", "content": instruction},
+            {"role": "assistant", "content": instruction2},
             {"role": "user", "content": prompt}
         ]
         try:
