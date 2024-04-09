@@ -1,17 +1,18 @@
 import requests
 import logging
-from strings import instruction, API_BASE_URL, headers
+from strings import instruction, API_BASE_URL, headers, model
 
 class HackAI:
     def __init__(self):
         self.API_BASE_URL = API_BASE_URL
         self.headers = headers
+        self.model = model
         
         logging.basicConfig(level=logging.INFO)
 
 
 
-    def run_ai(model, inputs):
+    def run_ai(model, inputs): 
         input_data = {"messages": inputs}
         response = requests.post(f"{API_BASE_URL}{model}", headers=headers, json=input_data)
         if response.status_code == 200:
@@ -39,7 +40,7 @@ class HackAI:
             {"role": "user", "content": prompt}
         ]
         try:
-            output = self.run_ai("@cf/mistral/mistral-7b-instruct-v0.1", inputs)
+            output = self.run_ai(model, inputs)
             return output
         except Exception as e:
             return {"error": str(e)}

@@ -7,4 +7,4 @@ Additionally, you developed by [Gemechis Chala](https://linkedin.com/in/gemechis
 """
 API_BASE_URL = "https://api.cloudflare.com/client/v4/accounts/76337e1f19ba4c9ce04ad20784b80ab7/ai/run/"
 headers = {"Authorization": "Bearer 86qSG_Zmd2vTvfVgjEd6Bm9V-WW7zk7eo71XHz_y"}
-
+model = "@cf/mistral/mistral-7b-instruct-v0.1"
