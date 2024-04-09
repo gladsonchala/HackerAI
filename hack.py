@@ -44,4 +44,4 @@ class HackAI:
             output = self.run_ai(model, inputs)
             return output
         except Exception as e:
-            return {"error": str(e) + model + inputs}
+            return {"error": str(e)}
